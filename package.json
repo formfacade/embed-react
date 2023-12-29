@@ -1,0 +1,29 @@
+{
+  "name": "@formfacade/embed-react",
+  "version": "0.1.0",
+  "description": "Elevate your Google Form's appearance to seamlessly align with your website's branding using Formfacade.",
+  "main": "index.js",
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "embed-google-form",
+    "formfacade",
+    "formfacade-react",
+    "google-form-embed",
+    "google-form-embed-react",
+    "google-form-embed-android",
+    "google-form-embed-ios",
+    "google-form-embed-mobile",
+    "customize-google-form",
+    "customize-google-form-react",
+    "formfacade-google-form"
+  ],
+  "author": "Formfacade",
+  "license": "ISC"
+}
