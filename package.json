@@ -1,5 +1,5 @@
 {
-  "name": "@formfacade/embed-react",
+  "name": "@formfacade.dev/embed-react",
   "version": "0.1.0",
   "description": "Elevate your Google Form's appearance to seamlessly align with your website's branding using Formfacade.",
   "main": "index.js",
