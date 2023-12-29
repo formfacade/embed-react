@@ -1,6 +1,6 @@
 ![Logo](https://cdn.neartail.com/1FAIpQLScRq0UUyhMrAuRBN39i68JdMoTvq85YCATs394gxuT_K3TU1A/2079056105/image_title/Screenshot%202023-12-28%20at%2012.42.30%20PM.png)
 
-# Embed Google Forms with Professional UI in React Native using Formfacade.
+# Embed Google Forms with Professional UI in React using Formfacade.
 
 [![License](https://img.shields.io/badge/license-ISC-blue.svg)](LICENSE)
 
