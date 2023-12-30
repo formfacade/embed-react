@@ -4,8 +4,8 @@
   "description": "Elevate your Google Form's appearance to seamlessly align with your website's branding using Formfacade.",
   "main": "index.js",
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "*",
+    "react-dom": "*"
   },
 
   "scripts": {

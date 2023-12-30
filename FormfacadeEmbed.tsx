@@ -10,52 +10,66 @@ const onSubmitFormHandlerDefault = () => {
     alert('Form submitted');
 }
 const FormfacadeEmbed = ({
-    prefillFormFn,
+    prefillFormFn = () => { return {}; },
     formFacadeEmbedURL,
     onSubmitFormHandler = onSubmitFormHandlerDefault
 }: FormfacadeEmbedProps) => {
 
 
-  React.useEffect(() => {
+    React.useEffect(() => {
 
-    const script = document.createElement('script');
-    script.src = formFacadeEmbedURL;
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
+        const script = document.createElement('script');
 
-    // @ts-ignore
-    window.facadeListener = {
-        onChange: function (arg) {
-            if (arg === 'submit') {
-                // @ts-ignore
-                const submitSeq = window.formFacade?.result && window.formFacade?.result?.submitSeq;
+        // append prefill=prefillForm this at last, if already ? exist them append &prefill=prefillForm else append ?prefill=prefillForm
+        formFacadeEmbedURL = formFacadeEmbedURL + (formFacadeEmbedURL.indexOf('?') > -1 ? '&' : '?') + 'prefill=ffPrefillForm';
 
-                if (submitSeq) {
+        script.src = formFacadeEmbedURL;
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+
+        // @ts-ignore
+        window.facadeListener = {
+            onChange: function (arg) {
+                if (arg === 'submit') {
                     // @ts-ignore
-                    let payload = {
-                        type: 'FORM_SUBMITTED_SUCCESS',
+                    const submitSeq = window.formFacade?.result && window.formFacade?.result?.submitSeq;
+
+                    if (submitSeq) {
                         // @ts-ignore
-                        submitSeq: window.formFacade?.result?.submitSeq
-                    };
+                        let payload = {
+                            type: 'FORM_SUBMITTED_SUCCESS',
+                            // @ts-ignore
+                            submitSeq: window.formFacade?.result?.submitSeq
+                        };
 
-                    onSubmitFormHandler(payload);
+                        onSubmitFormHandler(payload);
+                    }
+
+                } else if (arg === 'cart-product' || arg === 'cart-checkout') {
+                    // TODO:
                 }
+            },
+        };
 
-            } else if (arg === 'cart-product' || arg === 'cart-checkout') {
-                // TODO:
+        // @ts-ignore
+        window.ffPrefillForm = () => {
+            console.log('prefillFormFn');
+            try {
+                prefillFormFn();
+            } catch (error) {
+                console.error(error);
             }
-        },
-    };
+        }
 
-    return () => {
-      document.body.removeChild(script);
-    }
-  }, [formFacadeEmbedURL]);
+        return () => {
+            document.body.removeChild(script);
+        }
+    }, [formFacadeEmbedURL]);
 
-  return (
-    <div id='ff-compose'></div>
-  )
+    return (
+        <div id='ff-compose'></div>
+    )
 }
 
 export default FormfacadeEmbed;
