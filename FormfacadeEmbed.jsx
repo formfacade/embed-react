@@ -1,11 +1,5 @@
 import React from 'react';
 
-interface FormfacadeEmbedProps {
-    prefillFormFn: () => any;
-    formFacadeEmbedURL: string;
-    onSubmitFormHandler: (event: any) => void;
-};
-
 const onSubmitFormHandlerDefault = () => {
     alert('Form submitted');
 }
@@ -13,7 +7,7 @@ const FormfacadeEmbed = ({
     prefillFormFn = () => { return {}; },
     formFacadeEmbedURL,
     onSubmitFormHandler = onSubmitFormHandlerDefault
-}: FormfacadeEmbedProps) => {
+}) => {
 
 
     React.useEffect(() => {
