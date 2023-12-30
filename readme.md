@@ -26,13 +26,14 @@ Use Formfacade to integrate Google Forms into your React app with a user interfa
 Instructions on how to install the package:
 
 ```bash
-npm i @formfacade.dev/embed-react-native
+npm i @formfacade.dev/embed-react
 ```
 
 ## Usage
 
 ```javascript
-import FormfacadeWebview from "@formfacade.dev/embed-react-native";
+
+import FormfacadeEmbed from "@formfacade.dev/embed-react";
 
 <FormfacadeEmbed
     formFacadeEmbedURL={FORMFACADE_FORM_URL}
