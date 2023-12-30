@@ -61,6 +61,8 @@ import FormfacadeEmbed from "@formfacade.dev/embed-react";
 
 ### Example 
 
+[![Edit embed-react](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/embed-react-29w8cy?file=%2Fsrc%2FApp.js%3A14%2C5)
+
 ```javascript
 
 import React from "react";
@@ -109,6 +111,7 @@ export default App;
 
 
 ```
+
 
 ## Support
 
