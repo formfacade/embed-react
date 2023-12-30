@@ -74,7 +74,7 @@ const FORMFACADE_URL = "https://formfacade.com/include/109671923741510513923/for
 const App = () => {
 
   const prefillFormFn = () => {
-    // To get the entry ID for the input fields, please visit https://formfacade.com/website/embed-google-form-in-website.html
+    // To get the entry ID for the input fields, please visit https://formfacade.com/website/does-formfacade-support-pre-filled-survey-links-like-native-google-forms-on-1FAIpQLSfGvg22V7Lzyw_5AEbKBSpklS_TMw6tKxcQiDqlC9KvfBVTgQ.html
     return {
       'entry.1297600622': '@formfacade.dev/embed-react',
       'entry.813617742': `${new Date()}`
