@@ -24,7 +24,6 @@ Use Formfacade to integrate Google Forms into your React app with a user interfa
 - [Support](#support)
 
 ## Installation
-## Package Installation Guide
 
 1. **Download the FormFacade Plugin:**
    Obtain the FormFacade plugin from the [Google Workspace Marketplace](https://workspace.google.com/marketplace/app/formfacade/743872305260).
