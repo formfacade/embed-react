@@ -2,7 +2,7 @@
 
 # Customize the UI and embed Google Forms in React without the need for an Iframe.
 
-[![License](https://img.shields.io/badge/license-ISC-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-ISC-blue.svg)](LICENSE.md)
 
 ## Description
 
