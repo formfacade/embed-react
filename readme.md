@@ -66,7 +66,7 @@ import FormfacadeEmbed from "@formfacade.dev/embed-react";
 | Prop                  | Type      | Default Value     | Required/Optional   |
 | --------------------- | --------- | ----------------- | ------------------- |
 | formFacadeURL    | String    | Required          | Required            |
-| onSubmitForm   | Function  | `() => Alert.alert('Form Submitted');` | Optional            |
+| onSubmitForm   | Function  | `() => alert('Form Submitted');` | Optional            |
 | prefillForm         | Function  | Not specified     | Optional            |
 
 
