@@ -24,12 +24,31 @@ Use Formfacade to integrate Google Forms into your React app with a user interfa
 - [Support](#support)
 
 ## Installation
+## Package Installation Guide
 
-Instructions on how to install the package:
+1. **Download the FormFacade Plugin:**
+   Obtain the FormFacade plugin from the [Google Workspace Marketplace](https://workspace.google.com/marketplace/app/formfacade/743872305260).
 
-```bash
-npm i @formfacade.dev/embed-react
-```
+2. **Access Google Forms:**
+   Open your Google Form
+
+3. **Add the FormFacade Add-on:**
+   - Click on the 'Add-ons' button in Google Forms.
+   - Choose 'Formfacade' from the list of available add-ons.
+   - Select 'Embed in a web page'.
+
+4. **Embedding the Form:**
+   - Upon clicking 'Embed', a dialog will appear asking, “Where do you want to embed this form?”
+   - Choose "Embed in React App" for integration.
+   - Retrieve the 'formfacadeURL' from this selection.
+
+5. **Integrate with React App:**
+   Use the following npm command to install the required package for embedding the form within your React application:
+
+  ```bash
+  npm i @formfacade.dev/embed-react
+  ```
+For more detailed information, please visit [FAQ: How do I embed a Google Form in the React App without the need for an Iframe?](https://docs.google.com/document/d/1w23EMeHBlFisximqlIS6pZoyyIDRMFwV4rrosYCMzhM/edit)
 
 ## Usage
 
@@ -38,8 +57,8 @@ npm i @formfacade.dev/embed-react
 import FormfacadeEmbed from "@formfacade.dev/embed-react";
 
 <FormfacadeEmbed
-    formFacadeEmbedURL={FORMFACADE_FORM_URL}
-    onSubmitFormHandler={onSubmitFormHandler}
+    formFacadeURL={formFacadeURL}
+    onSubmitForm={onSubmitForm}
 />
 
 ````
@@ -47,15 +66,15 @@ import FormfacadeEmbed from "@formfacade.dev/embed-react";
 
 | Prop                  | Type      | Default Value     | Required/Optional   |
 | --------------------- | --------- | ----------------- | ------------------- |
-| formFacadeEmbedURL    | String    | Required          | Required            |
-| onSubmitFormHandler   | Function  | `() => Alert.alert('Form Submitted');` | Optional            |
-| prefillFormFn         | Function  | Not specified     | Optional            |
+| formFacadeURL    | String    | Required          | Required            |
+| onSubmitForm   | Function  | `() => Alert.alert('Form Submitted');` | Optional            |
+| prefillForm         | Function  | Not specified     | Optional            |
 
 
 
-- **formFacadeEmbedURL**: URL of the Formfacade embedded Google Form. This is a required field.
-- **onSubmitFormHandler**: Callback function triggered on form submission. Default behavior: Shows an alert for form submission.
-- **prefillFormFn**: Function to prefill form data. It's optional. 
+- **formFacadeURL**: URL of the Formfacade embedded Google Form. This is a required field.
+- **onSubmitForm**: Callback function triggered on form submission. Default behavior: Shows an alert for form submission.
+- **prefillForm**: Function to prefill form data. It's optional. 
 
 
 
@@ -73,7 +92,7 @@ const FORMFACADE_URL = "https://formfacade.com/include/109671923741510513923/for
 
 const App = () => {
 
-  const prefillFormFn = () => {
+  const prefillForm = () => {
     // To get the entry ID for the input fields, please visit https://formfacade.com/website/does-formfacade-support-pre-filled-survey-links-like-native-google-forms-on-1FAIpQLSfGvg22V7Lzyw_5AEbKBSpklS_TMw6tKxcQiDqlC9KvfBVTgQ.html
     return {
       'entry.1297600622': '@formfacade.dev/embed-react',
@@ -81,7 +100,7 @@ const App = () => {
     };
   };
 
-  const onSubmitFormHandler = () => {
+  const onSubmitForm = () => {
     alert('Form submitted');
   }
 
@@ -99,9 +118,9 @@ const App = () => {
         </h1>
       </header>
       <FormfacadeEmbed
-        formFacadeEmbedURL={FORMFACADE_URL}
-        prefillFormFn={prefillFormFn}
-        onSubmitFormHandler={onSubmitFormHandler}
+        formFacadeURL={FORMFACADE_URL}
+        prefillForm={prefillForm}
+        onSubmitForm={onSubmitForm}
       />
     </div>
   );
