@@ -72,14 +72,14 @@ import FormfacadeEmbed from "@formfacade/embed-react";
 
 
 - **formFacadeURL**: URL of the Formfacade embedded Google Form. This is a required field.
-- **onSubmitForm**: Callback function triggered on form submission. Default behavior: Shows an alert for form submission.
+- **onSubmitForm**: Callback function triggered on form submission.
 - **prefillForm**: Function to prefill form data. It's optional. 
 
 
 
 ### Example 
 
-[![Edit embed-react](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/embed-react-29w8cy?file=%2Fsrc%2FApp.js%3A14%2C5)
+[![Edit embed-react](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/determined-matan-g996k4?file=%2Fsrc%2FApp.js)
 
 ```javascript
 
@@ -92,7 +92,9 @@ const FORMFACADE_URL = "https://formfacade.com/include/109671923741510513923/for
 const App = () => {
 
   const prefillForm = () => {
-    // To get the entry ID for the input fields, please visit https://formfacade.com/website/does-formfacade-support-pre-filled-survey-links-like-native-google-forms-on-1FAIpQLSfGvg22V7Lzyw_5AEbKBSpklS_TMw6tKxcQiDqlC9KvfBVTgQ.html
+    // Optional: Refer to the provided link to find the entry IDs for prefilling input fields: 
+    // https://formfacade.com/website/does-formfacade-support-pre-filled-survey-links-like-native-google-forms-on-1FAIpQLSfGvg22V7Lzyw_5AEbKBSpklS_TMw6tKxcQiDqlC9KvfBVTgQ.html
+    
     return {
       'entry.1297600622': '@formfacade/embed-react',
       'entry.813617742': `${new Date()}`
@@ -106,21 +108,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <header>
-        <h1
-          style={{
-            textAlign: "center",
-            fontSize: "2rem",
-            fontWeight: "bold",
-          }}
-        >
-          Formfacade Embed React
-        </h1>
-      </header>
       <FormfacadeEmbed
         formFacadeURL={FORMFACADE_URL}
-        prefillForm={prefillForm}
         onSubmitForm={onSubmitForm}
+
+        // Optional: Use prefillForm to prefill form fields. See prefillForm function for details. Remove if not required.
+        prefillForm={prefillForm}
       />
     </div>
   );
