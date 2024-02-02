@@ -45,7 +45,7 @@ Use Formfacade to integrate Google Forms into your React app with a user interfa
    Use the following npm command to install the required package for embedding the form within your React application:
 
   ```bash
-  npm i @formfacade.dev/embed-react
+  npm i @formfacade/embed-react
   ```
 For more detailed information, please visit [FAQ: How do I embed a Google Form in the React App without the need for an Iframe?](https://docs.google.com/document/d/1w23EMeHBlFisximqlIS6pZoyyIDRMFwV4rrosYCMzhM/edit)
 
@@ -53,7 +53,7 @@ For more detailed information, please visit [FAQ: How do I embed a Google Form i
 
 ```javascript
 
-import FormfacadeEmbed from "@formfacade.dev/embed-react";
+import FormfacadeEmbed from "@formfacade/embed-react";
 
 <FormfacadeEmbed
     formFacadeURL={formFacadeURL}
@@ -66,7 +66,7 @@ import FormfacadeEmbed from "@formfacade.dev/embed-react";
 | Prop                  | Type      | Default Value     | Required/Optional   |
 | --------------------- | --------- | ----------------- | ------------------- |
 | formFacadeURL    | String    | Required          | Required            |
-| onSubmitForm   | Function  | `() => alert('Form Submitted');` | Optional            |
+| onSubmitForm   | Function  | `() => console.log('Form Submitted');` | Optional            |
 | prefillForm         | Function  | Not specified     | Optional            |
 
 
@@ -84,7 +84,7 @@ import FormfacadeEmbed from "@formfacade.dev/embed-react";
 ```javascript
 
 import React from "react";
-import FormfacadeEmbed from "@formfacade.dev/embed-react";
+import FormfacadeEmbed from "@formfacade/embed-react";
 
 const FORMFACADE_URL = "https://formfacade.com/include/109671923741510513923/form/1FAIpQLSetAzIt89c0hBCWhI1AzUWRXDQ0VV1JAUph6i_3dvNpT-ZpqA/classic.js?div=ff-compose";
 
@@ -94,13 +94,14 @@ const App = () => {
   const prefillForm = () => {
     // To get the entry ID for the input fields, please visit https://formfacade.com/website/does-formfacade-support-pre-filled-survey-links-like-native-google-forms-on-1FAIpQLSfGvg22V7Lzyw_5AEbKBSpklS_TMw6tKxcQiDqlC9KvfBVTgQ.html
     return {
-      'entry.1297600622': '@formfacade.dev/embed-react',
+      'entry.1297600622': '@formfacade/embed-react',
       'entry.813617742': `${new Date()}`
     };
   };
 
   const onSubmitForm = () => {
-    alert('Form submitted');
+    // Add your specific form submission handling code below.
+    console.log("----FORM SUBMITTED----");
   }
 
   return (
