@@ -9,17 +9,22 @@ const defaultPrefillForm = () => {
     return {};
 };
 
+const defaultFormLoadHandler = () => {
+    console.log('Form loaded');
+};
+
 const FormFacadeEmbed = ({
     prefillForm = defaultPrefillForm, // Default prefillForm function
     formFacadeURL,
-    onSubmitForm = defaultSubmitHandler // Default submit handler
+    onSubmitForm = defaultSubmitHandler, // Default submit handler
+    onFormLoad = defaultFormLoadHandler // Default onFormLoad function
 }) => {
 
     useEffect(() => {
         const script = document.createElement('script');
 
         // Appending prefill parameter to formFacadeURL
-        formFacadeURL = formFacadeURL + (formFacadeURL.indexOf('?') > -1 ? '&' : '?') + 'prefill=ffPrefillForm';
+        formFacadeURL = formFacadeURL + (formFacadeURL.indexOf('?') > -1 ? '&' : '?') + 'prefill=ffPrefillForm&onload=ffOnLoadForm';
 
         script.src = formFacadeURL;
         script.async = true;
@@ -53,7 +58,22 @@ const FormFacadeEmbed = ({
         // Function to prefill form
         window.ffPrefillForm = () => {
             try {
-                return prefillForm();
+                // Calling prefillForm callback
+                if (typeof prefillForm === 'function') {
+                    return prefillForm();
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        // Function to handle form load
+        window.ffOnLoadForm = () => {
+            try {
+                // Calling onFormLoad callback
+                if (typeof onFormLoad === 'function') {
+                    return onFormLoad();
+                }
             } catch (error) {
                 console.error(error);
             }
@@ -66,7 +86,7 @@ const FormFacadeEmbed = ({
     }, [formFacadeURL]); // Dependency array
 
     return (
-        <div id='ff-compose'></div>
+        <div id='ff-compose' ff-embed='react'></div>
     );
 }
 
@@ -75,7 +95,8 @@ const areEqual = (prevProps, nextProps) => {
     return (
         prevProps.formFacadeURL === nextProps.formFacadeURL &&
         prevProps.prefillForm === nextProps.prefillForm &&
-        prevProps.onSubmitForm === nextProps.onSubmitForm
+        prevProps.onSubmitForm === nextProps.onSubmitForm &&
+        prevProps.onFormLoad === nextProps.onFormLoad
     );
 }
 

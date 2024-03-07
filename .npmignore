@@ -1,3 +1,6 @@
 src
 .babelrc
 rollup.config.js
+demo
+.gitignore
+.github
