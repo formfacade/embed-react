@@ -1,6 +1,6 @@
 {
   "name": "@formfacade/embed-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Elevate your Google Form's appearance to seamlessly align with your website's branding using Formfacade.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
