@@ -68,12 +68,14 @@ import FormfacadeEmbed from "@formfacade/embed-react";
 | formFacadeURL    | String    | Required          | Required            |
 | onSubmitForm   | Function  | `() => console.log('Form Submitted');` | Optional            |
 | prefillForm         | Function  | Not specified     | Optional            |
+| onFormLoad         | Function  | `() => console.log('Form loaded');`     | Optional            |
 
 
 
 - **formFacadeURL**: URL of the Formfacade embedded Google Form. This is a required field.
 - **onSubmitForm**: Callback function triggered on form submission.
 - **prefillForm**: Function to prefill form data. It's optional. 
+- **onFormLoad**: Function that can be invoked when a form is loaded. It's optional.
 
 
 
@@ -104,14 +106,25 @@ const App = () => {
   const onSubmitForm = () => {
     // Add your specific form submission handling code below.
     console.log("----FORM SUBMITTED----");
-  }
+  };
+
+  const onFormLoad = () => {
+    console.log("----FORM LOADED----");
+  };
+
+
 
   return (
     <div className="App">
       <FormfacadeEmbed
         formFacadeURL={FORMFACADE_URL}
+
+        // Optional: Callback function triggered on form submission. Remove if not required.
         onSubmitForm={onSubmitForm}
 
+        // Optional: Function that can be invoked when a form is loaded. Remove if not required.
+        onFormLoad={onFormLoad}
+    
         // Optional: Use prefillForm to prefill form fields. See prefillForm function for details. Remove if not required.
         prefillForm={prefillForm}
       />
