@@ -47,7 +47,7 @@ Use Formfacade to integrate Google Forms into your React app with a user interfa
   ```bash
   npm i @formfacade/embed-react
   ```
-For more detailed information, please visit [FAQ: How do I embed a Google Form in the React App without the need for an Iframe?](https://docs.google.com/document/d/1w23EMeHBlFisximqlIS6pZoyyIDRMFwV4rrosYCMzhM/edit)
+For more detailed information, please visit [How to embed Google Forms in your React app without an iframe?](https://formfacade.com/enhance/embed-google-forms-in-react-app.html)
 
 ## Usage
 
