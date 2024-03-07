@@ -23,7 +23,7 @@ const FormFacadeEmbed = ({
     useEffect(() => {
         const script = document.createElement('script');
 
-        // Appending prefill parameter to formFacadeURL
+        // Appending prefill and onload parameters to formFacadeURL
         formFacadeURL = formFacadeURL + (formFacadeURL.indexOf('?') > -1 ? '&' : '?') + 'prefill=ffPrefillForm&onload=ffOnLoadForm';
 
         script.src = formFacadeURL;
