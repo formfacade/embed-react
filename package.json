@@ -1,6 +1,6 @@
 {
   "name": "@formfacade/embed-react",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Elevate your Google Form's appearance to seamlessly align with your website's branding using Formfacade.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -24,18 +24,14 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.5",
     "babel-preset-minify": "^0.5.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "*",
+    "react-dom": "*",
     "rollup": "^4.0.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
     "styled-jsx": "^5.1.2"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
   },
   "keywords": [
     "embed-google-form",
@@ -59,5 +55,5 @@
   "bugs": {
     "url": "https://github.com/formfacade/embed-react/issues"
   },
-  "homepage": "https://formfacade.com/"
+  "homepage": "https://formfacade.com"
 }
