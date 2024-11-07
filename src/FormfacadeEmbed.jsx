@@ -17,7 +17,8 @@ const FormFacadeEmbed = ({
     prefillForm = defaultPrefillForm, // Default prefillForm function
     formFacadeURL,
     onSubmitForm = defaultSubmitHandler, // Default submit handler
-    onFormLoad = defaultFormLoadHandler // Default onFormLoad function
+    onFormLoad = defaultFormLoadHandler, // Default onFormLoad function
+    flush = false
 }) => {
 
     useEffect(() => {
@@ -25,6 +26,10 @@ const FormFacadeEmbed = ({
 
         // Appending prefill and onload parameters to formFacadeURL
         formFacadeURL = formFacadeURL + (formFacadeURL.indexOf('?') > -1 ? '&' : '?') + 'prefill=ffPrefillForm&onload=ffOnLoadForm';
+
+        if(flush) {
+            formFacadeURL = formFacadeURL + '&flush=true';
+        }
 
         script.src = formFacadeURL;
         script.async = true;
