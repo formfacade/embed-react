@@ -77,7 +77,7 @@ import FormfacadeEmbed from "@formfacade/embed-react";
 - **onSubmitForm**: Callback function triggered on form submission.
 - **prefillForm**: Function to prefill form data. It's optional. 
 - **onFormLoad**: Function that can be invoked when a form is loaded. It's optional.
-- **flush**:  When flush is set to true, the form always starts fresh upon rendering, without using any cached data from previous form sessions. This is useful for scenarios where the same form is used multiple times with different prefillForm parameters, ensuring the form starts with a clean state every time. If set to false, cached form data may be used, potentially preserving user inputs from previous sessions.
+- **flush**:  Disables autosave.
 
 
 
